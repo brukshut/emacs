@@ -24,12 +24,15 @@ function fetch_emacs_src {
 }
 
 function debian_prep {
+  ## refresh apt cache
+  sudo apt-get update -y
   for pkg in ncurses-dev libgnutls28-dev; do
     sudo apt-get install ${pkg} -y
   done
 }
 
 function darwin_prep {
+  brew update
   brew install gnutls
 }
 
