@@ -66,6 +66,8 @@ function cleanup_src {
   local name=$1
   local version=$2
   local srcdir=/usr/local/src
+  [[ -e ${srcdir}/${name}.${version}.tar.xz ]] &&
+    sudo rm -rf ${srcdir}/${name}.${version}.tar.xz
   [[ -d ${srcdir}/${name}-${version} ]] &&
     sudo rm -rf ${srcdir}/${name}-${version}
 }
@@ -79,7 +81,8 @@ VERSION=26.2
 ## make sure prerequisties are installed
 [[ $(uname) == 'Darwin' ]] && darwin_prep
 [[ $(uname) == 'Linux' ]] &&
-  ( [[ $(lsb_release -s -i) == "Debian" ]] && debian_prep )
+  ( [[ $(lsb_release -s -i) == "Debian" ]] && debian_prep
+    [[ $(lsb_release -s -i) == "Raspbian" ]] && debian_prep )
 
 ## compile and install emacs
 build_emacs ${VERSION}
