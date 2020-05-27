@@ -54,6 +54,7 @@ function build_emacs {
     sudo ./configure --prefix=/usr/local \
     --without-all \
     --without-ns \
+    --without-x \
     --without-x-toolkit \
     --without-toolkit-scroll-bars \
     --with-gnutls
@@ -76,7 +77,7 @@ function cleanup_src {
 
 ## main
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-VERSION=26.2
+VERSION=26.3
 
 ## make sure prerequisties are installed
 [[ $(uname) == 'Darwin' ]] && darwin_prep
