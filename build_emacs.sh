@@ -54,6 +54,7 @@ function build_emacs {
     sudo ./configure --prefix=/usr/local \
     --without-all \
     --without-ns \
+    --without-x \
     --without-x-toolkit \
     --without-toolkit-scroll-bars \
     --with-gnutls
