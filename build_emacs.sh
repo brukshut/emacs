@@ -26,7 +26,7 @@ function fetch_emacs_src {
 function debian_prep {
   ## refresh apt cache
   sudo apt-get update -y
-  for pkg in ncurses-dev libgnutls28-dev; do
+  for pkg in ncurses-dev libgnutls28-dev pkg-config; do
     sudo apt-get install ${pkg} -y
   done
 }
@@ -76,7 +76,7 @@ function cleanup_src {
 
 ## main
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-VERSION=26.2
+VERSION=27.1
 
 ## make sure prerequisties are installed
 [[ $(uname) == 'Darwin' ]] && darwin_prep
