@@ -32,6 +32,7 @@ function debian_prep {
 }
 
 function darwin_prep {
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   brew update
   brew install gnutls
 }
@@ -77,7 +78,7 @@ function cleanup_src {
 
 ## main
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-VERSION=26.3
+VERSION=28.1
 
 ## make sure prerequisties are installed
 [[ $(uname) == 'Darwin' ]] && darwin_prep
