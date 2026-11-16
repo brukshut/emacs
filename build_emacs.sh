@@ -76,8 +76,8 @@ function cleanup_src {
 ## end functions
 
 ## main
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
-VERSION=26.3
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/homebrew/bin
+VERSION=31.1
 
 ## make sure prerequisties are installed
 [[ $(uname) == 'Darwin' ]] && darwin_prep
